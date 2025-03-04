@@ -1,10 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "linkup");
-
-if (mysqli_connect_errno()) {
-    echo "Failed to connect:  " . mysqli_connect_errno();
-}
-
+include 'DB_connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +10,7 @@ if (mysqli_connect_errno()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinkUp</title>
 </head>
-
+hello
 <body>
 </body>
 
