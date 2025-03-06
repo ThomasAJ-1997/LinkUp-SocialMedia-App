@@ -32,6 +32,7 @@ a {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     font-style: italic;
+    margin-bottom: 10px;
 }
 
 .login-header h1 {
@@ -63,6 +64,12 @@ a {
     backdrop-filter: blur(3px);
 }
 
+a {
+    font-family: "Madimi One", sans-serif;
+    font-style: italic;
+    color: #2688dc;
+}
+
 .popup-message {
     font-family: "Madimi One", sans-serif;
     font-style: italic;
@@ -85,6 +92,12 @@ input[type='submit'] {
     padding: 5px 10px 5px 10px;
     font-family: "Madimi One", sans-serif;
     font-size: 100%;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: #24b4ff;
 }
 
 input[type='text'],

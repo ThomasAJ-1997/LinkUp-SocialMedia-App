@@ -54,6 +54,7 @@ $(document).ready(function() {
                 <input type="submit" name="login_button" value="Login">
                 <?php if(in_array("Email or password was incorrect<br>", $error_array))
                     echo"<p class='popup-message'>Email or password was incorrect<br><p>"?>
+                <br>
                 <a href="#" id="signup" class="signup">Register Account</a>
             </form>
         </div>
@@ -118,6 +119,5 @@ $(document).ready(function() {
     </div>
     </div>
 </div>
-</>
 
 </html>

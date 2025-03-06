@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lobster&family=Madimi+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.navigation_banner {
+    width: 100%;
+    height: 40px;
+    background-color: #24b4ff;
+    border-bottom: 5px solid #0e90d2;
+    margin: 0 0 10px 0;
+    display: inline-flex;
+}
+
+.logo a{
+    font-family: "Madimi One", sans-serif;
+    font-style: italic;
+    margin-left: 10px;
+    font-size: 200%;
+    text-shadow: #000 0.5px 0.5px 0;
+    position: relative;
+    top: 9px;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    text-decoration: none;
+    text-shadow: #000 0.5px 0.5px 0;
+    color: #1a7daf;
+}
+
+nav {
+   float: right;
+    right: 1px;
+    position: absolute;
+    margin: 10px;
+}
+
+nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0 5px;
+}
+
+nav a:hover {
+    border-bottom: 3px solid #cc3300;
+    color: white;
+}
+
+.welcome-message {
+    font-family: "Madimi One", sans-serif;
+    font-style: italic;
+    font-size: 17px;
+    color: white;
+}
