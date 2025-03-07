@@ -7,6 +7,9 @@ if(isset($_SESSION['username'])){
     $usernameLoggedIn = $_SESSION['username'];
     $user_details_query = mysqli_query($conn, "SELECT * FROM users WHERE username='$usernameLoggedIn'");
     $user = mysqli_fetch_array($user_details_query);
+
+   
+
 } else {
     header("location: register.php");
 }
@@ -39,12 +42,15 @@ if(isset($_SESSION['username'])){
     </div>
 
     <nav>
-        <a href="#" class="welcome-message"><?php echo $user['first_name'] ?> </a>
+        <a href="<?php echo $usernameLoggedIn ?>" class="welcome-message"><?php echo $user['first_name'] ?> </a>
         <a href="index.php"><i class="fa fa-home fs-1" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-comment fs-1" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-bell fs-1" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-users fs-1" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-cogs fs-1" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-sign-out fs-1" aria-hidden="true"></i></a>
+        <a href="./logout.php"><i class="fa fa-sign-out fs-1" aria-hidden="true"></i></a>
+
     </nav>
 </div>
+
+<div class="wrapper">

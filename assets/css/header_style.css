@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lobster&family=Madimi+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+body {
+    background-color: #e3e3e3;
+}
+
 .navigation_banner {
     width: 100%;
     height: 40px;
@@ -7,6 +11,8 @@
     border-bottom: 5px solid #0e90d2;
     margin: 0 0 10px 0;
     display: inline-flex;
+    position: fixed;
+    z-index: 1000;
 }
 
 .logo a{
@@ -52,3 +58,88 @@ nav a:hover {
     font-size: 17px;
     color: white;
 }
+.wrapper {
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+    padding: 0 10px;
+    width: 75%;
+    min-width: 950px;
+}
+
+.column {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #DFDFDF;
+    border-radius: 7px;
+    box-shadow: 2px 2px 1px #DFDFDF;
+    z-index: -1;
+
+}
+
+.user_details {
+    width: 250px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.user_details img {
+    height: 125px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.user_details_left_right {
+    width: 125px;
+    display: inline-block;
+    position: absolute;
+}
+
+.main_column {
+    float: right;
+    width: 70%;
+    z-index: -1;
+    min-height: 60px;
+}
+
+.post_form {
+    width: 100%;
+}
+
+.post_form textarea {
+    width: 80%;
+    height: 60px;
+    border-radius: 4px;
+    margin-right: 5px;
+    border: 1px solid #DFDFDF;
+    font-size: 12px;
+    font-family: "Madimi One", sans-serif;
+    padding: 5px;
+}
+
+textarea:focus {
+    outline: none;
+
+}
+
+.post_form input[type='submit'] {
+    width: 11%;
+    height: 71px;
+    border: none;
+    border-radius: 10px;
+    background-color:  #209edd;
+    color: white;
+    font-family: "Madimi One", sans-serif;
+    font-size: 18px;
+    text-shadow: #000 0.5px 0.5px 0;
+    position: absolute;
+    outline: none;
+    margin-left: 10px;
+    transition: 0.3s ease;
+    cursor: not-allowed;
+}
+
+.post_form input[type='submit']:hover {
+    background-color: #24b4ff;
+}
+
