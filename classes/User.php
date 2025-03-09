@@ -21,14 +21,29 @@ class User {
         return $this->user['username'];
     }
 
-    public function getNumPosts() {
-        return $this->user['num_posts'];
+    public function getNumPosts()
+    {
+        $username = $this->user['username'];
+        $query = mysqli_query($this->conn, "SELECT num_posts FROM users WHERE username = '$username'");
+        $row = mysqli_fetch_array($query);
+        return $row['num_posts'];
     }
-
     public function getFirstAndLastName() {
         $user_fname = $this->user['first_name'];
         $user_lname = $this->user['last_name'];
 
         return $user_fname . " " . $user_lname;
+    }
+
+    public function isClosed() {
+        $username = $this->user['username'];
+        $query = mysqli_query($this->conn, "SELECT user_closed FROM users WHERE username='$username'");
+        $row = mysqli_fetch_array($query);
+
+        if($row['user_closed'] == 'yes') {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
