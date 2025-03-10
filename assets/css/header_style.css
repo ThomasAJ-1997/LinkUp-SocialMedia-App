@@ -159,3 +159,14 @@ textarea:focus {
     border-radius: 25px;
 }
 
+.posts_area {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loading-image {
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

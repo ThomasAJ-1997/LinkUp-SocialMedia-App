@@ -35,10 +35,6 @@ if (isset($_POST['post'])) {
     </div>
 </div>
 
-<?php
-//$post = new Post($conn, $userLoggedIn);
-//$post->loadPostsForFriends();
-?>
 
 <script>
     $(function(){
@@ -85,13 +81,6 @@ if (isset($_POST['post'])) {
                 rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && //* or $(window).height()
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth) //* or $(window).width()
             );
-        }
-
-        function showImage() {
-            document.getElementById('my').style.visibility='visible';
-        }
-        function hideImage() {
-            document.getElementById('my').style.visibility='hidden';
         }
     });
 
