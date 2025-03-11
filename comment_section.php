@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title></title>
-
-    <!-- CSS  -->
-    <link rel="stylesheet" type="text/css" href="assets/css/header_style.css">
-</head>
-<body>
-
 <?php
 
 global $conn;
@@ -25,6 +14,26 @@ if(isset($_SESSION['username'])){
     header("location: register.php");
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/header_style.css">
+</head>
+<body>
+
+<style type="text/css">
+    * {
+        font-size: 14px;
+        font-family: "Madimi One", sans-serif;
+    }
+
+</style>
+
 <script>
 function toggle() {
     const element = document.getElementById("comment_section");
@@ -58,7 +67,7 @@ if (isset($_POST['postComment' . $post_id])) {
 }
 ?>
 
-<form action="comment_section.php?post_id=<?php echo $post_id; ?>" id="comment_section"
+<form action="comment_section.php?post_id=<?php echo $post_id; ?>" class="comment_form" id="comment_section"
       name="postComment<?php echo $post_id; ?>" method="POST">
     <textarea name="post_body"></textarea>
     <input type="submit" name="postComment<?php echo $post_id; ?>" value="Post">
@@ -155,6 +164,9 @@ if ($count != 0) {
 
         <?php
     }
+}
+else {
+    echo "<p class='center-comment'><br><br>Be the first to comment.</p>";
 }
 ?>
 

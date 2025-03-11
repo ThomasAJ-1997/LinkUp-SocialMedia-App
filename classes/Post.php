@@ -110,15 +110,23 @@ class Post {
                     ?>
                     <script>
                         function toggle<?php echo $id; ?>() {
-                            const element = document.getElementById("toggleComment<?php echo $id; ?>");
+                            if( !e ) e = window.event;
 
-                            if(element.style.display === 'block')
-                                element.style.display = 'none';
-                            else
-                                element.style.display = 'block';
+                            var target = $(e.target);
+
+                            if (!target.is("a")) {
+                                const element = document.getElementById("toggleComment<?php echo $id; ?>");
+
+                                if(element.style.display === 'block')
+                                    element.style.display = 'none';
+                                else
+                                    element.style.display = 'block';
                         }
                     </script>
                     <?php
+                    $comment_num = mysqli_query($this->conn, "SELECT * FROM comments WHERE post_id='$id'");
+                    $comments_checked = mysqli_num_rows($comment_num);
+
                     $date_time_now = date("Y-m-d H:i:s");
                     $start_date = new DateTime($date_time); //Time of post
                     $end_date = new DateTime($date_time_now); //Current time
@@ -182,7 +190,7 @@ class Post {
                         }
                     }
 
-                    $str .= "<div class='status_post' onclick='toggle$id()'>
+                    $str .= "<div class='status_post' onclick='toggle$id(e)'>
 								<div class='post_profile_pic'>
 									<img src='$profile_pic' width='50'>
 								</div>
@@ -193,11 +201,17 @@ class Post {
 								<div id='post_body'>
 									$body
 									<br>
+									<br>
 								</div>
+								
+								<div class='newsfeedPostOptions'>
+								 Comments($comments_checked)&nbsp;&nbsp;&nbsp;
+								 
+								 </div>
 
 							</div>
 							<div class='post_comment' id='toggleComment$id' style='display: none;'>
-							<iframe src='comment_section.php?post_id=$id' id='comment_iframe'></iframe>
+							<iframe src='comment_section.php?post_id=$id' class='comment_frame' id='comment_iframe'></iframe>
 							</div>
 							<hr>";
                 } // end isFriend Function
