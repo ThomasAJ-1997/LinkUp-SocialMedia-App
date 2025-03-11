@@ -35,12 +35,28 @@ class User {
         return $user_fname . " " . $user_lname;
     }
 
+    public function getProfile() {
+        return $this->user['profile_pic'];
+    }
+
     public function isClosed() {
         $username = $this->user['username'];
         $query = mysqli_query($this->conn, "SELECT user_closed FROM users WHERE username='$username'");
         $row = mysqli_fetch_array($query);
 
         if($row['user_closed'] == 'yes') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isFriend($check_friend_status)
+    {
+        $username_check = "," . $check_friend_status . ",";
+
+        if((strstr($this->user['friend_array'], $username_check) ||
+        $check_friend_status == $this->user['username'])) {
             return true;
         } else {
             return false;
