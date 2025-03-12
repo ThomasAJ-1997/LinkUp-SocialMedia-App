@@ -110,17 +110,16 @@ class Post {
                     ?>
                     <script>
                         function toggle<?php echo $id; ?>() {
-                            if( !e ) e = window.event;
 
-                            var target = $(e.target);
-
+                            const target = $(event.target);
                             if (!target.is("a")) {
-                                const element = document.getElementById("toggleComment<?php echo $id; ?>");
+                                var element = document.getElementById("toggleComment<?php echo $id; ?>");
 
-                                if(element.style.display === 'block')
-                                    element.style.display = 'none';
+                                if (element.style.display == "block")
+                                    element.style.display = "none";
                                 else
-                                    element.style.display = 'block';
+                                    element.style.display = "block";
+                            }
                         }
                     </script>
                     <?php
@@ -190,7 +189,7 @@ class Post {
                         }
                     }
 
-                    $str .= "<div class='status_post' onclick='toggle$id(e)'>
+                    $str .= "<div class='status_post' onclick='toggle$id()'>
 								<div class='post_profile_pic'>
 									<img src='$profile_pic' width='50'>
 								</div>
