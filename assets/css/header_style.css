@@ -2,6 +2,7 @@
 
 body {
     background-color: #e3e3e3;
+    font-family: "Madimi One", sans-serif;
 }
 
 .navigation_banner {
@@ -231,5 +232,27 @@ textarea:focus {
     padding: 0;
     text-decoration: none;
     color: #24b4ff;
+    border:none;
+}
+.newsfeedPostOptions iframe {
+    border: 0;
+    height: 17px;
+    width: 200px;
+}
+
+.comment_like {
+    background-color: transparent;
     border: none;
+    font-size: 14px;
+    color: #3498db;
+    padding: 0;
+    height: auto;
+    width: auto;
+    margin-right: 3px;
+}
+
+.like_value {
+    display: inline;
+    font-size: 14px;
+
 }
