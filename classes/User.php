@@ -4,17 +4,11 @@ class User {
     private $conn;
 
     public function __construct($conn, $user) {
-        if(!$user) {
-            exit("user variable is null");
-        }
         // Constructor is called when an object of the user class is created.
         $this->conn = $conn;
         $user_details_query = mysqli_query($conn, "SELECT * FROM users WHERE username='$user'");
         $this->user = mysqli_fetch_array($user_details_query);
 
-        if(!$this->user) {
-            exit("this->user variable is null. No results found for username: " . $user . "<br>");
-        }
     }
     //$user_obj = new User($conn, "Thomas Jones")
     public function getUsername() {
@@ -61,5 +55,48 @@ class User {
         } else {
             return false;
         }
+    }
+
+    public function receiveRequest($user_from) {
+        $user_to = $this->user['username'];
+        $check_request_query = mysqli_query($this->conn, "SELECT * FROM friend_request WHERE user_to = '$user_to' AND user_from = '$user_from'");;
+        if(mysqli_num_rows($check_request_query) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function sendRequest($user_to)
+    {
+        $user_from = $this->user['username'];
+        $check_request_query = mysqli_query($this->conn,
+            "SELECT * FROM friend_request WHERE user_to='$user_to' AND user_from='$user_from'");
+        if (mysqli_num_rows($check_request_query) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function removeFriend($user_to_remove) {
+        $logged_in_user = $this->user['username'];
+        $query = mysqli_query($this->conn, "SELECT friend_array FROM users WHERE username='$user_to_remove'");
+        $row = mysqli_fetch_array($query);
+        $friend_array_for_username = $row['friend_array'];
+
+        $new_friend_array = str_replace($user_to_remove . ",", "", $this->user['friend_array']);
+        $remove_friend = mysqli_query($this->conn, "UPDATE users SET friend_array='$new_friend_array' WHERE username='$logged_in_user'");
+
+        $new_friend_array = str_replace($this->user['username'] . ",", "", $friend_array_for_username);
+        $remove_friend = mysqli_query($this->conn, "UPDATE users SET friend_array='$new_friend_array' WHERE username='$user_to_remove'");
+
+
+
+    }
+
+    public function requestFriend($user_to) {
+        $user_from = $this->user['username'];
+        $query = mysqli_query($this->conn, "INSERT INTO friend_request  VALUES(id, '$user_to', '$user_from')");
     }
 }

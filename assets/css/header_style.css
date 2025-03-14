@@ -291,3 +291,45 @@ textarea:focus {
     margin: 0 0 0 20px;
     word-wrap: break-word;
 }
+
+/*///////////////////////////*/
+
+.danger {
+    background-color: #E74C3C;
+    color: white;
+}
+
+.warning {
+    background-color: #f0a84d;
+    color: white;
+}
+
+.default {
+    background-color: #bdc3c7;
+    color: white;
+}
+
+.success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.info {
+    background-color: #3498db;
+    color: white;
+}
+
+.deep_blue {
+    background-color: #0043f0;
+    color: white;
+}
+
+.profile_left_section input[type='submit'] {
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    margin: 7px 0 0 7px;
+    border: none;
+    color: white;
+}
+
