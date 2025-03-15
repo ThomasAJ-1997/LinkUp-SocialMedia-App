@@ -29,6 +29,10 @@ class User {
         return $user_fname . " " . $user_lname;
     }
 
+    public function getFriendArray() {
+        return $this->user['friend_array'];
+    }
+
     public function getProfile() {
         return $this->user['profile_pic'];
     }

@@ -333,3 +333,23 @@ textarea:focus {
     color: white;
 }
 
+/*...................................*/
+#accept_button {
+    width: 20%;
+    height: 28px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    color: white;
+    background-color: #2ecc71;
+}
+
+#ignore_button {
+    width: 20%;
+    height: 28px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    color: white;
+    background-color: #E74C3C;;
+}

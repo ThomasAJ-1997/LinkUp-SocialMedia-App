@@ -50,6 +50,7 @@ class Post {
     public function loadPostsForFriends($data, $limit)
     {
 
+        global $conn;
         $page = $data['page'];
         $userLoggedIn = $this->user_obj->getUsername();
 

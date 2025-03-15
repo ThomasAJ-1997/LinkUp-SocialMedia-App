@@ -26,6 +26,7 @@ if(isset($_SESSION['username'])){
 <!--  JavaScript  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/js/bootstrap.js"></script>
+    <script src="./assets/js/linkup.js"></script>
 
 <!-- CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,7 +47,7 @@ if(isset($_SESSION['username'])){
         <a href="index.php"><i class="fa fa-home fs-1" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-comment fs-1" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-bell fs-1" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-users fs-1" aria-hidden="true"></i></a>
+        <a href="request.php"><i class="fa fa-users fs-1" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-cogs fs-1" aria-hidden="true"></i></a>
         <a href="./logout.php"><i class="fa fa-sign-out fs-1" aria-hidden="true"></i></a>
 
